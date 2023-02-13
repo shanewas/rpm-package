@@ -25,6 +25,18 @@ To build RPM packages, you will need the following tools:
 # Building the RPM package
 ## Step 1: Creating the directory structure
 Create a directory structure that will hold the RPM package's files and information.
+```bash
+$ mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+```
+The directories created above are:
+
+- BUILD: This directory is used during the building process and will contain intermediate files generated during the RPM creation process.
+- RPMS: This directory will contain the binary RPM packages that are created.
+- SOURCES: This directory will contain the source files for the software being packaged.
+- SPECS: This directory will contain the SPEC file for the software being packaged.
+- SRPMS: This directory will contain the source RPM packages that are created.
+
+It's important to follow the RPM directory structure convention to ensure that the RPM building process works correctly.
 
 ## Step 2: Writing the SPEC file
 The SPEC file is a template that contains information about the software being packaged, such as its name, version, and dependencies. Write a SPEC file for your software using the template.
@@ -56,3 +68,4 @@ Building RPM packages allows you to package your software in a format that is ea
 ## Additional resources for learning more about RPM packages
 - [RPM website](https://rpm.org/)
 - [Red Hat Package Manager documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/packaging_and_distributing_software/index)
+
