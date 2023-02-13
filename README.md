@@ -30,16 +30,34 @@ $ mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
 ```
 The directories created above are:
 
-- BUILD: This directory is used during the building process and will contain intermediate files generated during the RPM creation process.
-- RPMS: This directory will contain the binary RPM packages that are created.
-- SOURCES: This directory will contain the source files for the software being packaged.
-- SPECS: This directory will contain the SPEC file for the software being packaged.
-- SRPMS: This directory will contain the source RPM packages that are created.
+- `BUILD`: This directory is used during the building process and will contain intermediate files generated during the RPM creation process.
+- `RPMS`: This directory will contain the binary RPM packages that are created.
+- `SOURCES`: This directory will contain the source files for the software being packaged.
+- `SPECS`: This directory will contain the SPEC file for the software being packaged.
+- `SRPMS`: This directory will contain the source RPM packages that are created.
 
 It's important to follow the RPM directory structure convention to ensure that the RPM building process works correctly.
 
 ## Step 2: Writing the SPEC file
 The SPEC file is a template that contains information about the software being packaged, such as its name, version, and dependencies. Write a SPEC file for your software using the template.
+
+The SPEC file is a plain text file and must have a .spec extension. To create the SPEC file, you can use a text editor of your choice, such as nano or vim. For example, you can create a new SPEC file with the following command:
+```bash
+$ nano ~/rpmbuild/SPECS/example.spec
+```
+The SPEC file contains several sections, including the header, the %files section, and the %install section. Some of the key sections include:
+
+- `Name`: Specifies the name of the package.
+- `Version`: Specifies the version of the package.
+- `Release`: Specifies the release number of the package.
+- `Summary`: A brief description of the package.
+- `Group`: The category of the package, such as System Environment/Base or System Environment/Daemons.
+- `License`: The license for the software being packaged.
+- `Source`: The location of the source code for the package.
+- `BuildRoot`: The location where the RPM package will be built.
+- `%install`: Specifies the installation instructions for the RPM package.
+- `%files`: Specifies the list of files that will be included in the RPM package.
+You can find more information on the format of the SPEC file and the different sections in the RPM manual pages or online resources.
 
 ## Step 3: Gathering the necessary files
 Collect all of the necessary files that are required for the software to run, including the software's binary files, configuration files, and documentation.
